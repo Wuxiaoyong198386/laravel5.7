@@ -3,8 +3,6 @@
 namespace App\Listeners;
 
 use IlluminateDatabase\Events\QueryExecuted;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Log;
 
 class QueryListener

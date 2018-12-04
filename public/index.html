@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    $.get("http://api.syrs-go.com:3002/token",function(data,status){
+        console.log(data)
+    });
+
+
+
+
+
+$.ajax({
+  url: "http://api.syrs-go.com:3002/admin/account/login",
+  data: {account:"admin",password:"admin"},
+  type: "POST",
+  beforeSend: function(xhr){xhr.setRequestHeader('token', 'f3b884761c41e7ca5e54b655e7e24193');},//这里设置header
+  success: function() {
+  	alert("Data: " + data + "\nStatus: " + status);
+  }
+});
+</script>
+</body>
+</html>

@@ -79,7 +79,12 @@ class AreaLogic extends BaseLogic
         $request=$this->area_model::create($insert_array);
         return $request;
     }
-
+    /**
+     * @author Sean
+     * @desc 删除行政区域
+     * @param area_id   行政区域id
+     * @return  int
+     */
     public function DeleteArea($request){
         //area_id为空或者不为数字，直接返回错误
         if (is_null($request->area_id) or !is_numeric($request->area_id)){

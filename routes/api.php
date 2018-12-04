@@ -22,10 +22,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  */
 Route::prefix('admin')->group(function () {
 
-    Route::get('arealist','admin\AreaController@GetAreaList');      //获取列表数据
+    Route::get('arealist','admin\AreaController@GetAreaList')->middleware("checkAdminUser");      //获取列表数据
     Route::post('updatearea','admin\AreaController@UpdateArea');    //修改
     Route::post('insertarea','admin\AreaController@InsertArea');    //插入
     Route::post('deletearea','admin\AreaController@DeleteArea');    //删除
+
+    Route::post('redis','admin\RedisController@TestReids')->middleware("checkAdminUser");    //删除
 
 
 
